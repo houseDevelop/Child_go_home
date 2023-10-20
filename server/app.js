@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 
 app.use('/',baseRoutes)
 
-//app.use('/:id',userRoutes)
+app.use('/:id',userRoutes)
 
 app.get('/servicios',(req,res)=>{
   res.status(200).render('servicios',{titulo:'servicios',subtitulo:'Pagina de servicios'})

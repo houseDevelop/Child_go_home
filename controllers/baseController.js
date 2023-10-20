@@ -8,13 +8,23 @@ export const login = async (req,res)=>{
   try {
     const usertest={id:'12321',user_name:'admin', psw:'1234'}
     const {userName,psw}=req.body
-    if(!userName||!psw) throw new Error('Faltan campos por llenar')
+    
+    let error = false;
+    
+    if(!userName||!psw){ 
+      error = true;
+      throw new Error('Faltan campos por llenar')
+    }
 
-    const validuser = await usertest.user_name === userName
-    const validpsw = await usertest.psw === psw
-    console.log(validuser, validpsw)
-    if(!validuser || !validpsw) throw new Error('Usuario o contraseña no coinciden.')
-    res.status(200).redirect(`/${usertest.id}`)  
+    const validuser = usertest.user_name === userName
+    const validpsw = usertest.psw === psw
+    
+    if (!validuser || !validpsw) {
+      error = true; // Configura "error" en true cuando las contraseñas no coinciden.
+      return res.status(200).render('index', { titulo: "Login", status: 1, error });
+    }
+
+    res.status(200).redirect(`/${usertest.id}`);
 
   } catch (err) {
     console.log(err)

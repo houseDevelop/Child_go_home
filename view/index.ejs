@@ -35,8 +35,15 @@
         <div class="form-group">
           <label for="clave">Contraseña</label>
           <input type="password" class="form-control" id="clave" name="psw" placeholder="Password" required>
-        </div><br>
+        </div>
+        <% if (typeof error !== 'undefined' && error) { %>
+          <div class="alert alert-danger">
+            Credenciales incorrectas. Inténtalo de nuevo.
+          </div>
+        <% } %>
+        <br>
         <input type="submit" class="btn btn-primary btn-block"></button>
       </form>
     </div>
+    
   <%- include('templates/footer' ,{tituloweb:"Child go Home",value:1})%>
