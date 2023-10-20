@@ -25,13 +25,16 @@ app.use(bodyParser.json())
 
 app.use('/',baseRoutes)
 
-app.use('/:id',userRoutes)
+// app.use('/:id',userRoutes)
 
 app.get('/servicios',(req,res)=>{
   res.status(200).render('servicios',{titulo:'servicios',subtitulo:'Pagina de servicios'})
 })
 app.get('/tutores',(req,res)=>{
   res.status(200).render('tutores',{titulo:'tutores',subtitulo:'Tutores'})
+})
+app.get('/maestros',(req,res)=>{
+  res.status(200).render('maestros',{titulo:'maestros',subtitulo:'Maestros'})
 })
 app.get("/grados",(req,res)=>{
   res.status(200).render("grados",{titulo:"grados",subtitulo:"Grados"})
