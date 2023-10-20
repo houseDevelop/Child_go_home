@@ -7,69 +7,56 @@
   <title>
     <%= tituloweb %>
   </title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
- <style>
-    /* Es para el menu */
-    .center-content {
-      display: flex;
-      /* Es para que este hasta arriba */
-      flex-direction: column;
-      /* Es para que este en linea */
-      height: 92vh;
-      /* Es para que el pie este hasta abajo */
-      margin: 20px;
-      /* le da el margen */
-    }
-
-    /* Es para que el menu sea negro */
-    .nav-link {
-      color: black !important;
-    }
-
-    /* Es para la linea */
-    .nav-link.active:after {
-      content: "";
-      /* Es para que aparezca la linea */
-      display: block;
-      /* Es para poner una linea */
-      border-bottom: 3px solid black;
-      /* Es para que la linea sea negra */
-      margin-top: 2px;
-      /* Es para que la linea este mas abajo */
-    }
-
-    /* Es para que el menu esta en medio */
-    .custom-header {
-      margin-left: 350px;
-      margin-right: 371px;
-    }
-  </style>
-</head>
-
-<body class="text-center text-black">
-  <div class="center-content">
-    <header class="custom-header">
-      <div>
-        <h3 class="float-md-start mb-0">
-          <%= tituloweb %>
-        </h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <%if(value==1){%>
-            <a class="nav-link fw-bold py-1 px-3 active">Login</a>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></head>
+<body >
+  <header>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a href="/" class="navbar-brand">
+          <strong>Child go Home</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarHeader">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <%if(value==1){%>
+            <li class="nav-item">
+              <a href="/" class="nav-link active">Login</a>
+            </li>
             <%}else if (value==2){%>
-              <a class="nav-link fw-bold py-1 px-3 active" aria-current="page" href="/grados">Grados</a>
+            <li class="nav-item">
+              <a href="/grados" class="nav-link active">Grados</a>
+            </li>
+            <li class="nav-item">
+              <a href="/tutores" class="nav-link">Tutores</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link">Salir</a>
+            </li>
+            <%}else if (value==3){%>
+            <li class="nav-item">
+              <a href="/grados" class="nav-link">Grados</a>
+            </li>
+            <li class="nav-item">
+              <a href="/tutores" class="nav-link active">Tutores</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link">Salir</a>
+            </li>
+            <%}else if (value==4){%>
+            <li class="nav-item">
+              <a class="nav-link fw-bold py-1 px-3" aria-current="page" href="/grados">Grados</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link fw-bold py-1 px-3" href="/tutores">Tutores</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link fw-bold py-1 px-3" href="/">Salir</a>
-              <%}else if (value==3){%>
-                <a class="nav-link fw-bold py-1 px-3" aria-current="page" href="/grados">Grados</a>
-                <a class="nav-link fw-bold py-1 px-3 active" href="/tutores">Tutores</a>
-                <a class="nav-link fw-bold py-1 px-3" href="/">Salir</a>
-                <%}else if (value==4){%>
-                  <a class="nav-link fw-bold py-1 px-3" aria-current="page" href="/grados">Grados</a>
-                  <a class="nav-link fw-bold py-1 px-3" href="/tutores">Tutores</a>
-                  <a class="nav-link fw-bold py-1 px-3" href="/">Salir</a>
-                  <%}%>
-
-        </nav>
+            </li>
+            <%}%>
+          </ul>
+        </div>
       </div>
-    </header>
+    </div>
+  </header>
