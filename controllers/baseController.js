@@ -1,7 +1,7 @@
 
 // configuracion de rutas y procesos requeridos para valdidar o modificar rutas base
 export const loginView = async (rec,res)=>{
-  return res.status(200).render('index',{titulo:"Login",status:1})
+  return res.status(200).render('index',{titulo:"Login",status:1,error:''})
 }
 export const login = async (req,res)=>{
   
@@ -19,15 +19,12 @@ export const login = async (req,res)=>{
     const validuser = usertest.user_name === userName
     const validpsw = usertest.psw === psw
     
-    if (!validuser || !validpsw) {
-      error = true; // Configura "error" en true cuando las contraseñas no coinciden.
-      return res.status(200).render('index', { titulo: "Login", status: 1, error });
-    }
+    if (!validuser || !validpsw) throw new Error('Contraseña o usuario incorrectos')
 
     res.status(200).redirect(`/${usertest.id}`);
 
   } catch (err) {
     console.log(err)
-    return res.status(403).json({error:err.message})
+    return res.status(403).render('index',{titulo:'Login',status:1,error:err.message})
   }
 }
