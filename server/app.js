@@ -1,3 +1,5 @@
+import 'dotenv/config.js'
+import '../db/conectdb.js'
 import express from 'express'
 import bodyParser from 'body-parser';
 import baseRoutes from '../routes/baseRoutes.js'
@@ -6,7 +8,7 @@ import path from 'path'
 import { fileURLToPath } from 'url';
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT||5000;
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -62,5 +64,5 @@ app.use((req,res,next)=>{
 })
 
 app.listen(port,()=>{
-  console.log(`example app listening at http://localhost:${port}`)
+  console.log(`example app listening at ${process.env.APP_DEPLOY}${process.env.PORT}`)
 })
