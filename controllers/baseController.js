@@ -35,12 +35,15 @@ export const login = async (req,res)=>{
       throw new Error('Faltan campos por llenar')
     }
 
-    const validuser = await Maestro.findOne({UserName:userName})
-    if(!validuser || !validuser.psw ===psw) throw new Error('Usuario o contraseña no coinciden.')
-    res.status(200).redirect(`/${usertest.id}`)  
+    const validuser = usertest.user_name === userName
+    const validpsw = usertest.psw === psw
+    
+    if (!validuser || !validpsw) throw new Error('Contraseña o usuario incorrectos')
+
+    res.status(200).redirect(`/${usertest.id}`);
 
   } catch (err) {
     console.log(err)
-    return res.status(403).render('index',{error:err.message})
+    return res.status(403).render('index',{titulo:'Login',status:1,error:err.message})
   }
 }
