@@ -1,20 +1,11 @@
 <%- include('templates/header',{tituloweb:titulo,value:status})%>
   <style>
-    .login-container {
-      max-width: 400px;
-      /* Ancho máximo del contenedor */
-      margin: 0 auto;
-      /* Centrar horizontalmente el contenedor */
-      background-color: white;
-      /* Fondo blanco para el formulario */
-      padding: 20px;
-      /* Espaciado interior */
-      border: 1px solid #ddd;
-      /* Borde del contenedor */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      /* Sombra del contenedor */
-      border-radius: 5px;
-      /* Borde redondeado */
+    .login-container {    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 60vh; /* Establece la altura al 100% de la altura de la ventana */
     }
 
     /* Estilos para el formulario de inicio de sesión */
@@ -27,9 +18,13 @@
     body {
       background-image: url('images/recursos/fondo2.jpg');
       /* Es para elegir el fondo */
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
     }
   </style>
-  <div class="container" id="main">
     <div class="login-container">
       <form method="POST" class="login-form" action="/login">
         <h3 class="mb-3">ACCESO AL SISTEMA</h3>
@@ -40,9 +35,15 @@
         <div class="form-group">
           <label for="clave">Contraseña</label>
           <input type="password" class="form-control" id="clave" name="psw" placeholder="Password" required>
-        </div><br>
+        </div>
+        <% if (typeof error !== 'undefined' && error) { %>
+          <div class="alert alert-danger">
+            Credenciales incorrectas. Inténtalo de nuevo.
+          </div>
+        <% } %>
+        <br>
         <input type="submit" class="btn btn-primary btn-block"></button>
       </form>
     </div>
-  </div>
+    
   <%- include('templates/footer' ,{tituloweb:"Child go Home",value:1})%>

@@ -1,13 +1,8 @@
 <%- include('templates/header',{tituloweb:"Child go Home",value:4})%>
 <style>
-  /*Modifica el cuerpo*/
+  /* Modifica el cuerpo */
   body {
-    background-image: url('/images/recursos/fondo.png');/*Es para elegir el fondo*/  
-  }
-  /*Es para el texto del formulario*/
-  .container{
-    text-align: left; /* Alinea el texto a la izquierda */
-    font-weight: bold; /* Hace que el texto sea negrito */
+    background-image: url('images/recursos/fondo.png'); /* Es para elegir el fondo */
   }
 </style>
 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -38,49 +33,49 @@
 </div><br>
 <div class="container" id="main">
   <div class="row">
-    <div class="col-md-12">
-      <div class="pull-right">
-        <a href="/grados" class=" btn btn-primary">Regresar</a>
+      <div class="col-md-12">
+          <div class="pull-right">
+              <a href="/grados" class=" btn btn-primary">Regresar</a>
+          </div>
       </div>
-    </div>
   </div><br>
-<div class="row">
-  <div class="col-md-12">
-    <fieldset>
-      <legend>Listado de Salones </legend>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Grado</th>
-            <th>Grupo</th>
-            <th class="text-center">Foto</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="text-center">
-              <img src="no disponible" width="50">
-            </td>
-            <td class="text-center">
-              <a href="../acciones.php?ID=<?php print $item['ID'] ?>" class="btn btn-danger btn-sm">Eliminar</span></a>
-              <a href="form_actualizar.php?ID=<?php print $item['ID'] ?>" class="btn btn-success btn-sm">Actualizar</a>
-              <a href="#" class="btn btn-primary btn-sm">Notificar</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="6">NO HAY REGISTROS</td>
-          </tr>
-        </tbody>
-      </table>
-    </fieldset>
+  <div class="row">
+    <div class="col-md-12">
+      <fieldset>
+        <legend>Listado de Salones </legend>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Titulo</th>
+              <th>Grado</th>
+              <th>Grupo</th>
+              <th class="text-center">Foto</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text-center">
+                <img src="no disponible" width="50">
+              </td>
+              <td class="text-center">
+                <a href="../acciones.php?ID=<?php print $item['ID'] ?>" class="btn btn-danger btn-sm">Eliminar</span></a>
+                <a href="form_actualizar.php?ID=<?php print $item['ID'] ?>" class="btn btn-success btn-sm">Actualizar</a>
+                <a href="#" class="btn btn-primary btn-sm">Notificar</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6">NO HAY REGISTROS</td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
   </div>
-</div>
-</div>
+  </div>
 <%- include('templates/footer' ,{tituloweb:"Child go Home",value:2})%>

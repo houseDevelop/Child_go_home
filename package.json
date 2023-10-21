@@ -1,9 +1,8 @@
 {
   "name": "coolshop",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "nodemon server/app.js",
     "start": "node server/app.js"
@@ -13,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -25,5 +25,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "description": ""
 }
