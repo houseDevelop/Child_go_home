@@ -35,21 +35,9 @@ export const login = async (req,res)=>{
       throw new Error('Faltan campos por llenar')
     }
 
-<<<<<<< HEAD
     const validuser = await Maestro.findOne({UserName:userName})
     if(!validuser || !validuser.psw ===psw) throw new Error('Usuario o contraseña no coinciden.')
     res.status(200).redirect(`/${usertest.id}`)  
-=======
-    const validuser = usertest.user_name === userName
-    const validpsw = usertest.psw === psw
-    
-    if (!validuser || !validpsw) {
-      error = true; // Configura "error" en true cuando las contraseñas no coinciden.
-      return res.status(200).render('index', { titulo: "Login", status: 1, error });
-    }
-
-    res.status(200).redirect(`/${usertest.id}`);
->>>>>>> paulina
 
   } catch (err) {
     console.log(err)
