@@ -42,16 +42,16 @@
   <div class="row">
     <div class="col-md-12">
       <fieldset>
-        <legend>Listado de Salones</legend>
+        <legend>Listado de Salones </legend>
         <table class="table table-bordered">
           <thead>
             <tr>
               <th>#</th>
-              <th>Cliente</th>
-              <th>N°. Pedido</th>
-              <th>Total</th>
-              <th>Fecha</th>
-              <th class="text-center"></th>
+              <th>Titulo</th>
+              <th>Grado</th>
+              <th>Grupo</th>
+              <th class="text-center">Foto</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -60,19 +60,22 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
               <td class="text-center">
-                <a href="pedidos/ver.php?ID=<?php print $item['ID'] ?>" class="btn btn-danger btn-sm">Detalles</a>
+                <img src="no disponible" width="50">
+              </td>
+              <td class="text-center">
+                <a href="../acciones.php?ID=<?php print $item['ID'] ?>" class="btn btn-danger btn-sm">Eliminar</span></a>
+                <a href="form_actualizar.php?ID=<?php print $item['ID'] ?>" class="btn btn-success btn-sm">Actualizar</a>
+                <a href="#" class="btn btn-primary btn-sm">Notificar</a>
               </td>
             </tr>
             <tr>
               <td colspan="6">NO HAY REGISTROS</td>
-            </tr> 
+            </tr>
           </tbody>
         </table>
       </fieldset>
     </div>
   </div>
-</div>
-</div>
+  </div>
 <%- include('templates/footer' ,{tituloweb:"Child go Home",value:2})%>

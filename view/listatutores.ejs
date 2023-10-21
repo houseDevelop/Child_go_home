@@ -46,11 +46,10 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Cliente</th>
-              <th>N°. Pedido</th>
-              <th>Total</th>
-              <th>Fecha</th>
+              <th>Nombre</th>
+              <th>Salon</th>
+              <th>Telefono</th>
+              <th>Domicilio</th>
               <th class="text-center"></th>
             </tr>
           </thead>
@@ -60,10 +59,9 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
               <td class="text-center">
-                <a href="pedidos/ver.php?ID=<?php print $item['ID'] ?>" class="btn btn-danger btn-sm">Detalles</a>
-              </td>
+                <a href="../acciones.php?ID=<?php print $item['ID'] ?>" class="btn btn-danger btn-sm">Eliminar</span></a>
+                <a href="form_actualizar.php?ID=<?php print $item['ID'] ?>" class="btn btn-success btn-sm">Actualizar</a>
             </tr>
             <tr>
               <td colspan="6">NO HAY REGISTROS</td>
